@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0a0a1f;
+      color: white;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(90deg, #00ffea, #ff00aa);
+      font-weight: 600;
+      font-size: 24px;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #00ffea;
+    }
+
+    .hero img {
+      width: 150px;
+      border-radius: 50%;
+      border: 3px solid #00ffea;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, #00ffea, #ff00aa);
+      color: black;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    input, textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+    }
+  </style>
+</head>
+<body>
+
+<header>🌐 My Portfolio</header>
+
+<section class="hero">
+  <img src="https://via.placeholder.com/150" alt="Profile">
+  <h2>Hello, I'm Your Name</h2>
+  <p>Creative Developer | Designer | Problem Solver</p>
+  <a href="#projects" class="btn">View My Work</a>
+</section>
+
+<section id="projects">
+  <h2>💼 Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Project One</h3>
+      <p>Short description of your project.</p>
+      <a href="#" target="_blank" class="btn">Open</a>
+    </div>
+
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>Short description of your project.</p>
+      <a href="#" target="_blank" class="btn">Open</a>
+    </div>
+
+    <div class="card">
+      <h3>Project Three</h3>
+      <p>Short description of your project.</p>
+      <a href="#" target="_blank" class="btn">Open</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>📬 Contact Me</h2>
+  <form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="text" id="subject" placeholder="Subject" required><br>
+    <textarea id="message" rows="5" placeholder="Message" required></textarea><br>
+    <button type="submit" class="btn">Send</button>
+    <button type="reset" class="btn">Clear</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Your Name | All Rights Reserved
+</footer>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  if (name.length < 3) {
+    alert("Name must be at least 3 characters.");
+    return false;
+  }
+
+  if (!email.includes("@")) {
+    alert("Enter a valid email.");
+    return false;
+  }
+
+  if (message.length < 10) {
+    alert("Message must be at least 10 characters.");
+    return false;
+  }
+
+  alert("Message sent successfully!");
+  return true;
+}
+</script>
+
+</body>
+</html>
